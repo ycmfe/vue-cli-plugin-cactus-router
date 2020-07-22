@@ -1,0 +1,32 @@
+{
+  "name": "vue-cli-plugin-cactus-router",
+  "version": "1.0.0",
+  "description": "cactus router plugin",
+  "files": [
+    "index.js",
+    "route-loader.js",
+    "generator"
+  ],
+  "keywords": [
+    "vue",
+    "cli",
+    "router",
+    "cactus"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ycmfe/vue-cli-plugin-cactus-router.git"
+  },
+  "homepage": "https://github.com/ycmfe/vue-cli-plugin-cactus-router.git#readme",
+  "author": "zhiqiang",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "devDependencies": {
+    "prettier": "^2.0.5"
+  },
+  "peerDependencies": {
+    "vue-auto-routing": "0.x"
+  }
+}
