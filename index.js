@@ -1,8 +1,10 @@
-const VueAutoRoutingPlugin = require('vue-auto-routing/lib/webpack-plugin')
+const webpackChokidarPlugin = require('webpack-chokidar-plugin')
+const generatorRouter = require('./router/generatorRouter')
 
 const defaultOptions = {
+  chunkNamePrefix: 'page-',
   pages: 'src/views',
-  nested: true,
+  importPrefix: '@/views/',
 }
 
 module.exports = (api, options) => {
@@ -12,10 +14,31 @@ module.exports = (api, options) => {
   }
 
   api.chainWebpack((webpackConfig) => {
+    let isReady = false
+
     // prettier-ignore
     webpackConfig
-      .plugin('vue-auto-routing')
-        .use(VueAutoRoutingPlugin, [pluginOptions])
+      .plugin('chokidar')
+        .use(new webpackChokidarPlugin({
+          watchFilePaths: [
+            'src/views/**/*.vue', 'src/view/**/*.ts'
+          ], 
+          onReadyCallback: () => {
+            console.log('Ready!')
+            isReady = true
+          }, 
+          onChangeCallback: () => { return null },
+          onAddCallback: () => {
+            if (isReady) {
+              generatorRouter(pluginOptions)
+            }
+          },
+          onUnlinkCallback: () => {
+            generatorRouter(pluginOptions)
+          },
+          usePolling: false,
+          ignored: '/node_modules/',
+      }))
 
     // prettier-ignore
     webpackConfig.module

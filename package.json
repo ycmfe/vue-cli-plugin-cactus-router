@@ -27,10 +27,8 @@
   "devDependencies": {
     "prettier": "^2.0.5"
   },
-  "peerDependencies": {
-    "vue-auto-routing": "0.x"
-  },
   "dependencies": {
+    "vue-route-generator": "v0.5.0",
     "webpack-chokidar-plugin": "^1.0.5"
   }
 }

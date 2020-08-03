@@ -4,7 +4,7 @@ import VueRouter, { RouteConfig } from 'vue-router'
 <%_ } else { _%>
 import VueRouter from 'vue-router'
 <%_ } _%>
-import autoRoutes from 'vue-auto-routing'
+import autoRoutes from '@ycmfe/vue-cli-plugin-cactus-router/router'
 import { createRouterLayout } from 'vue-router-layout'
 
 Vue.use(VueRouter)
