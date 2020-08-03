@@ -1,6 +1,6 @@
 {
   "name": "@ycmfe/vue-cli-plugin-cactus-router",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "cactus router plugin",
   "files": [
     "index.js",
