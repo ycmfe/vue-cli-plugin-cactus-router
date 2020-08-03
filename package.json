@@ -6,6 +6,7 @@
     "index.js",
     "route-loader.js",
     "generator",
+    "router",
     "prompts.js"
   ],
   "keywords": [
