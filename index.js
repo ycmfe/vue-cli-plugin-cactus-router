@@ -24,7 +24,6 @@ module.exports = (api, options) => {
             'src/views/**/*.vue', 'src/view/**/*.ts'
           ], 
           onReadyCallback: () => {
-            console.log('Ready!')
             isReady = true
           }, 
           onChangeCallback: () => { return null },
