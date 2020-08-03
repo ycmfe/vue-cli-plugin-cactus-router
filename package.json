@@ -29,5 +29,8 @@
   },
   "peerDependencies": {
     "vue-auto-routing": "0.x"
+  },
+  "dependencies": {
+    "webpack-chokidar-plugin": "^1.0.5"
   }
 }
