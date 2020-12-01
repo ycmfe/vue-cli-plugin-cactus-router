@@ -5,6 +5,18 @@ const defaultOptions = {
   chunkNamePrefix: 'page-',
   pages: 'src/views',
   importPrefix: '@/views/',
+  patterns: [
+    '**/*.vue',
+    '!**/__*__.vue',
+    '!**/__*__/**',
+    '!**/components/**',
+    '!**/assets/**',
+    '!**/services/**',
+    '!**/config/**',
+    '!**/config.vue',
+    '!**/point/**',
+    '!**/point.vue',
+  ]
 }
 
 module.exports = (api, options) => {

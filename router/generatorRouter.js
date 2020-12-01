@@ -1,6 +1,6 @@
 const fs = require('fs')
 const path = require('path')
-const { generateRoutes } = require('vue-route-generator')
+const { generateRoutes } = require('@ycmfe/vue-route-generator')
 const { chalk, error } = require('@vue/cli-shared-utils')
 
 module.exports = function generateRouterFile(options) {
