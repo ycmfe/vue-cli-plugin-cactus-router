@@ -35,7 +35,13 @@ module.exports = (api, options) => {
           new webpackChokidarPlugin({
             watchFilePaths: ['src/views/**/*.vue', 'src/view/**/*.ts'],
             onReadyCallback: () => {
-              isReady = true
+              // fix: 测试环境启动服务时，chokidar会为每个监控的文件 触发 add事件，导致 onAddCallback => generatorRouter 重复执行 ，电脑性能加大消耗
+              // !todo 最好可以通过屏蔽chokidar内不必要的add（fs.stats）事件来完成这一优化
+              // !todo 检查是否和node版本相关
+              generatorRouter(pluginOptions)
+              setTimeout(() => {
+                isReady = true
+              }, 15000)
             },
             onChangeCallback: () => {
               return null
