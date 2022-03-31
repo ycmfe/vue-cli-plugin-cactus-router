@@ -15,6 +15,7 @@ const defaultOptions = {
     '!**/config/**',
     '!**/config.vue',
     '!**/point/**',
+    '!**/mixin/**',
     '!**/point.vue',
   ]
 }
